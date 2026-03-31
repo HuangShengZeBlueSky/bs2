@@ -14,18 +14,21 @@ Author: Tencent AI Arena Authors
 class Config:
 
     # features
-    # 特征
+    # 特征 (需要根据 preprocessor.py 中提取的特征严格对应)
     FEATURES = [
-        2,
-        6,
-        6,
-        8,
+        2,  # cur_pos_norm
+        6,  # feature_end_pos
+        6,  # feature_history_pos
+        4,  # feature_hero_status (新增：加速状态、加速剩余、技能状态、技能CD)
+        6,  # feature_treasure_pos (新增：宝箱特征)
+        6,  # feature_buff_pos (新增：Buff特征)
+        8,  # legal_action
     ]
 
     FEATURE_SPLIT_SHAPE = FEATURES
 
     # Size of observation
-    # observation的维度
+    # observation的维度 (自动求和: 2+6+6+4+6+6+8 = 38)
     DIM_OF_OBSERVATION = sum(FEATURES)
 
     # Dimension of movement action direction

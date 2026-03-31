@@ -44,10 +44,13 @@ class Config:
     # features
     # 特征
     FEATURES = [
-        2,
-        6,
-        6,
-        8,
+        2,  # cur_pos_norm
+        6,  # feature_end_pos
+        6,  # feature_history_pos
+        4,  # feature_hero_status (新增)
+        6,  # feature_treasure_pos (新增)
+        6,  # feature_buff_pos (新增)
+        8,  # legal_action
     ]
 
     FEATURE_SPLIT_SHAPE = FEATURES
